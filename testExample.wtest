@@ -1,9 +1,39 @@
-import example.pepita
+import deportista.*
+import disciplinas.*
+import elementos.*
 
-describe "group of tests for pepita" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+describe "grupo de tests para Victoria" {
+
+  test "Victoria mide 150cm, practica judo y tiene 4 entrenadores, su presupuesto es de 8780" {
+    victoria.altura(150)
+    victoria.disciplina(judo)
+    victoria.elemento(trajeJudo)
+    victoria.cantEntrenadores(4)
+    assert.equals(8780, victoria.presupuestoTotal())
   }
 
+  test "Victoria mide 210cm, practica tenis y tiene 2 entrenadores, su presupuesto es de 2615" {
+    victoria.altura(210)
+    victoria.disciplina(tenis)
+    victoria.elemento(raqueta)
+    victoria.cantEntrenadores(2)
+    assert.equals(2615, victoria.presupuestoTotal())
+  }
+
+  test "Victoria mide 170cm, practica hockey, su categoria es 1 y tiene 3 entrenadores, su presupuesto es de 1350" {
+    victoria.altura(170)
+    victoria.disciplina(hockey)
+    victoria.elemento(paloHockey)
+    victoria.cantEntrenadores(3)
+    assert.equals(1350, victoria.presupuestoTotal())
+  }
+
+  test "Victoria mide 170cm, agarra una raqueta, practica judo y tiene 5 entrenadores, su presupuesto es de 3480" {
+    victoria.altura(170)
+    victoria.disciplina(judo)
+    victoria.elemento(raqueta)
+    victoria.cantEntrenadores(5)
+    assert.equals(3480, victoria.presupuestoTotal())
+  }
 }
